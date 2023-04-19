@@ -10,11 +10,16 @@
   );
 }
 
+@layer base {
+  body {
+    @apply bg-slate-100 dark:bg-semi-black text-slate-600 dark:text-slate-200;
+  }
+}
 @layer components {
   .gradient-bg {
     background: var(--bg-gradient);
   }
   .gradient-text {
-    @apply font-bold text-transparent bg-clip-text gradient-bg;
+    @apply text-transparent bg-clip-text gradient-bg;
   }
 }

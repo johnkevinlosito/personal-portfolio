@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import SkillsSection from "@/components/SkillsSection";
 import React from "react";
 
 export const metadata = {
@@ -24,6 +25,7 @@ const HomePage = () => {
   return (
     <div>
       <HeroSection />
+      <SkillsSection />
     </div>
   );
 };

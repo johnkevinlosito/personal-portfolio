@@ -8,7 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-100 dark:bg-semi-black text-slate-600 dark:text-slate-200">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+      </head>
+      <body>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

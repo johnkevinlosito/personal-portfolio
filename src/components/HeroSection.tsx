@@ -28,7 +28,7 @@ export const socialLinks = [
 const HeroSection = () => {
   return (
     <section id="hero" className="relative isolate overflow-hidden pt-14">
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-from-t from-slate-100 dark:from-semi-black sm:h-32" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-b from-slate-100 dark:from-semi-black sm:h-32" />
       <div
         className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] lg:shadow-xl dark:shadow-slate-700 sm:-mr-80 lg:-mr-96"
         aria-hidden="true"
@@ -39,7 +39,7 @@ const HeroSection = () => {
             Hey, I'm John Kevin 👋
           </h1>
           <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-            <p className="text-lg leading-8">
+            <p className="text-lg lg:text-2xl leading-8">
               I'm a passionate web and mobile developer. Naturally curious, and
               always seeking new knowledge and actively developing new skills.
             </p>
@@ -63,7 +63,7 @@ const HeroSection = () => {
             loading="eager"
             height={300}
             width={450}
-            className="mt-10 lg:ml-20 aspect-square max-w-full object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+            className="mt-10 lg:ml-20 aspect-square max-w-full object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36 h-auto w-auto"
           />
         </div>
       </div>
