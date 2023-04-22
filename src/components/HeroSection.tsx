@@ -18,11 +18,6 @@ export const socialLinks = [
     link: "https://github.com/johnkevinlosito",
     icon: <FaGithub size="32" />,
   },
-  {
-    name: "Devto",
-    link: "https://dev.to/johnkevinlosito",
-    icon: <FaDev size="32" />,
-  },
 ];
 
 const HeroSection = () => {
