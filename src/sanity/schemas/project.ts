@@ -79,6 +79,11 @@ export default defineType({
       type: "url",
     }),
     defineField({
+      name: "repo",
+      title: "Repo",
+      type: "url",
+    }),
+    defineField({
       name: "tags",
       title: "Tags",
       type: "array",

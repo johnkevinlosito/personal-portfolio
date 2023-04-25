@@ -30,6 +30,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^7.0.0",
     "@types/react-headroom": "^3.2.0"
   }
 }
