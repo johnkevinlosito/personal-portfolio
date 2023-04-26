@@ -67,7 +67,17 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
-
+    defineField({
+      name: "skills",
+      title: "Skills",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "skill" }],
+        },
+      ],
+    }),
     defineField({
       name: "client",
       title: "Client",
