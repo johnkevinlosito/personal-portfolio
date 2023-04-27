@@ -25,6 +25,7 @@
       "@styles/*": ["./src/styles/*"],
       "@queries/*": ["./src/sanity/queries/*"],
       "@schemas": ["./src/sanity/schemas"],
+      "@lib/*": ["./src/lib/*"],
       "@root/*": ["./*"]
     }
   },
