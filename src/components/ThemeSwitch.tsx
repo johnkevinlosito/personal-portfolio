@@ -24,6 +24,9 @@ const ThemeSwitch = () => {
           ) : (
             <HiMoon size={24} />
           )}
+          <span className="md:hidden">
+            Switch to {resolvedTheme === "dark" ? "light" : "dark"} mode
+          </span>
         </>
       )}
     </button>

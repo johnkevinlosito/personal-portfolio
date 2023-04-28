@@ -14,10 +14,10 @@ const Logo = () => {
           alt="Memoji"
           className="w-12 h-12"
         />
-        <span className="transition duration-300 opacity-100 group-hover:opacity-0">
+        <span className="transition duration-300 opacity-0 md:opacity-100 group-hover:opacity-100 md:group-hover:opacity-0">
           @johnkevinlosito
         </span>
-        <span className="absolute transition duration-300 left-16 opacity-0 group-hover:opacity-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:gradient-text">
+        <span className="absolute transition duration-300 left-16 opacity-100 md:opacity-0 group-hover:opacity-0 md:group-hover:opacity-100 group-hover:gradient-text">
           John Kevin
         </span>
       </div>
