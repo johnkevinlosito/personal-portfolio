@@ -1,7 +1,7 @@
 import BlockContent from "./blockContent";
 import Company from "./company";
 
-export interface Education {
+export default interface Education {
   _id: string;
   course: string;
   body: BlockContent[];

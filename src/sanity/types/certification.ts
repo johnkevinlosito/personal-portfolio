@@ -1,7 +1,7 @@
 import BlockContent from "./blockContent";
 import Company from "./company";
 
-export interface Certification {
+export default interface Certification {
   _id: string;
   certificate: string;
   fromDate: string;

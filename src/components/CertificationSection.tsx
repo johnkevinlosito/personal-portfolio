@@ -1,21 +1,21 @@
-import Job from "@/sanity/types/job";
+import Certification from "@/sanity/types/certification";
 import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
 
-interface ExperienceProps {
-  jobs: Job[];
+interface CertificationProps {
+  certification: Certification[];
 }
 
-const ExperienceSection = ({ jobs }: ExperienceProps) => {
+const CertificationSection = ({ certification }: CertificationProps) => {
   return (
     <section>
-      <h2 className="gradient-text font-bold text-2xl md:text-3xl lg:text-4xl mt-14">
-        Work Experience
+      <h2 className="gradient-text font-bold text-2xl md:text-3xl lg:text-4xl mt-14 mb-8">
+        Certification
       </h2>
-      {jobs.map(
-        ({ _id, company, jobTitle, fromDate, toDate, skills, description }) => (
+      {certification.map(
+        ({ _id, body, badge, certificate, fromDate, issuer, toDate }) => (
           <article
             key={_id}
             className="relative grid md:grid-cols-5 md:gap-10 before:content-[''] mx-12 before:block before:h-full before:absolute before:left-[-25px] md:before:left-[-37px] before:border-l-2 before:border-gray-300 dark:before:border-gray-700 md:space-x-4 pb-12 mt-8"
@@ -35,44 +35,41 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <h3 className="p-0 m-0">{jobTitle}</h3>
+                <h3 className="p-0 m-0">{certificate}</h3>
 
-                {company.url ? (
+                {issuer.url ? (
                   <a
                     className="p-0 m-0"
-                    href={company.url}
+                    href={issuer.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {company.name}
+                    {issuer.name}
                   </a>
                 ) : (
-                  <p className="p-0 m-0">{company.name}</p>
+                  <p className="p-0 m-0">{issuer.name}</p>
                 )}
-                <p className="p-0 m-0 text-sm text-gray-500">{`${format(
-                  new Date(fromDate),
-                  "MMM yyyy"
-                )} — ${
-                  toDate ? format(new Date(toDate), "MMM yyyy") : "present"
-                }`}</p>
-                {company.logo && (
+                <p className="p-0 m-0 text-sm text-gray-500">
+                  {`${format(new Date(fromDate), "MMM yyyy")} ${
+                    toDate ? ` — ${format(new Date(toDate), "MMM yyyy")}` : ""
+                  }`}
+                </p>
+                {badge && (
                   <Image
-                    src={company.logo}
-                    alt={company.name}
-                    width={64}
-                    height={64}
+                    src={badge}
+                    alt={issuer.name}
+                    width={100}
+                    height={100}
                     className="rounded-md mt-4"
                   />
                 )}
               </div>
             </div>
-            <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3 prose dark:prose-invert">
-              <PortableText value={description} />
-              <p>
-                <strong>Technologies: </strong>
-                {skills.join(", ")}
-              </p>
-            </div>
+            {body && (
+              <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3 prose dark:prose-invert">
+                <PortableText value={body} />
+              </div>
+            )}
           </article>
         )
       )}
@@ -80,4 +77,4 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
   );
 };
 
-export default ExperienceSection;
+export default CertificationSection;

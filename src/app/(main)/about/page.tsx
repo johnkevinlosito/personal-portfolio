@@ -1,26 +1,39 @@
+import CertificationSection from "@/components/CertificationSection";
 import Container from "@/components/Container";
+import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import { sanityClient } from "@/lib/sanity";
+import { certificationQuery } from "@/sanity/queries/certification";
+import { educationQuery } from "@/sanity/queries/education";
 import { jobsQuery } from "@/sanity/queries/jobs";
+import Certification from "@/sanity/types/certification";
+import Education from "@/sanity/types/education";
 import Job from "@/sanity/types/job";
 import React from "react";
 
 export const metadata = {
   title:
-    "About John Kevin Losito, a Front-end Engineer, and a lifelong learner",
-  description: "",
+    "About John Kevin Losito, a Front-end Engineer, and a lifelong learner based in PH",
+  description:
+    "A passionate developer, naturally curious, and always seeking new knowledge",
 };
 
 const getData = async () => {
   const jobs: Job[] = await sanityClient.fetch(jobsQuery);
+  const education: Education[] = await sanityClient.fetch(educationQuery);
+  const certification: Certification[] = await sanityClient.fetch(
+    certificationQuery
+  );
 
   return {
     jobs,
+    education,
+    certification,
   };
 };
 
 const AboutPage = async () => {
-  const { jobs } = await getData();
+  const { jobs, education, certification } = await getData();
 
   return (
     <div>
@@ -47,6 +60,12 @@ const AboutPage = async () => {
         </p>
         <div className="mt-12 space-y-6">
           <ExperienceSection jobs={jobs} />
+        </div>
+        <div className="mt-12 space-y-6">
+          <EducationSection education={education} />
+        </div>
+        <div className="mt-12 space-y-6">
+          <CertificationSection certification={certification} />
         </div>
       </Container>
     </div>
