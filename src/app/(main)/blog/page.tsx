@@ -4,6 +4,7 @@ import { postsQuery } from "@/sanity/queries/posts";
 import Post from "@/sanity/types/post";
 import { format } from "date-fns";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const metadata = {
@@ -23,13 +24,13 @@ const BlogPage = async () => {
   return (
     <Container>
       <h1 className="gradient-text font-bold text-3xl md:text-5xl lg:text-6xl pb-8 mt-8">
-        Posts
+        Blog
       </h1>
       {posts.map((post) => {
         return (
           <article key={post.slug} className="mb-16">
             <h2 className="text-xl font-bold md:text-2xl lg:text-3xl mb-2 hover:gradient-text">
-              <a href={`/blog/${post.slug}`}>{post.title}</a>
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </h2>
             <p>{post.excerpt}</p>
             <div className="mt-2 flex justify-between md:items-center gap-2 flex-col md:flex-row">
