@@ -6,6 +6,7 @@ export default interface Post {
   title: string;
   mainImage: string;
   excerpt: string;
+  description: string;
   estimatedReadingTime: number;
   categories: Category[];
   body: BlockContent[];

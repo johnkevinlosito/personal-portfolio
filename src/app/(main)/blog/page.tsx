@@ -29,15 +29,20 @@ const BlogPage = async () => {
       {posts.map((post) => {
         return (
           <article key={post.slug} className="mb-16">
-            <h2 className="text-xl font-bold md:text-2xl lg:text-3xl mb-2 hover:gradient-text">
-              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            <h2 className="text-xl font-bold md:text-2xl lg:text-3xl mb-2">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="underlined relative hover:gradient-text"
+              >
+                {post.title}
+              </Link>
             </h2>
             <p>{post.excerpt}</p>
             <div className="mt-2 flex justify-between md:items-center gap-2 flex-col md:flex-row">
-              <span className="px-2 py-1 bg-slate-600 text-slate-200 font-light rounded hover:bg-slate-500">
+              <span className="px-2 py-1 bg-slate-600 text-slate-200 font-light rounded hover:bg-slate-500 text-sm">
                 {post.categories.join(", ")}
               </span>
-              <em className="block">
+              <em className="text-sm">
                 Published on{" "}
                 {format(new Date(post.publishedAt), "MMMM dd, yyyy")}
               </em>

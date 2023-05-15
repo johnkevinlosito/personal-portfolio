@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.0.0",
+    "@sanity/code-input": "^4.1.1",
     "@sanity/vision": "^3.9.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
@@ -23,6 +24,7 @@
     "next-sanity": "^4.1.7",
     "next-themes": "^0.2.1",
     "postcss": "8.4.22",
+    "prism-react-renderer": "^2.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-headroom": "^3.2.1",

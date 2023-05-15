@@ -6,6 +6,7 @@ export const postsQuery = (slug?: string) => groq`
 }] | order(publishedAt desc) {
   _id,
   title,
+  description,
   "slug": slug.current,
   "excerpt": array::join(string::split((pt::text(body)), "")[0..255], "") + "...",
   "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),

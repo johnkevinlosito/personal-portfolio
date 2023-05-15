@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { ErrorFallback } from "@/components/ErrorFallback";
+import components from "@/components/PortableTextComponents";
 import { sanityClient } from "@/lib/sanity";
 import { postsQuery } from "@/sanity/queries/posts";
 import Post from "@/sanity/types/post";
@@ -25,7 +26,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const post = await getData(params.slug);
   return {
     title: `${post?.title} - John Kevin Losito's Blog`,
-    description: post?.excerpt,
+    description: post?.description,
   };
 };
 
@@ -55,7 +56,7 @@ const BlogPostPage = async ({ params }: PageProps) => {
             <h1 className="gradient-text text-3xl font-bold md:text-4xl lg:text-5xl pb-8 ">
               {post.title}
             </h1>
-            <PortableText value={post.body} />
+            <PortableText value={post.body} components={components} />
           </div>
         </article>
       </Container>
