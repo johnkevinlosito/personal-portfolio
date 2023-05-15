@@ -7,7 +7,7 @@ const Logo = () => {
     <Link href="/" passHref>
       <div className="group relative transition whitespace-nowrap hover:transition duration-300 text-2xl font-bold flex gap-4 items-center">
         <Image
-          src={"/assets/avatar_memoji.jpg"}
+          src={"/assets/avatar_memoji.png"}
           width={48}
           height={48}
           quality={100}

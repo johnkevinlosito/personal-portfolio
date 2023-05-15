@@ -63,7 +63,7 @@ const Header = () => {
               <ul className="flex gap-8 text-lg">
                 <NavItem href="/about" text="About" />
                 <NavItem href="/projects" text="Projects" />
-                <NavItem href="/posts" text="Posts" />
+                <NavItem href="/blog" text="Blog" />
               </ul>
             </nav>
             <button
