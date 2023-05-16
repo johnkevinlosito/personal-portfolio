@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
+import components from "./PortableTextComponents";
 
 interface CertificationProps {
   certification: Certification[];
@@ -67,7 +68,7 @@ const CertificationSection = ({ certification }: CertificationProps) => {
             </div>
             {body && (
               <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3 prose dark:prose-invert">
-                <PortableText value={body} />
+                <PortableText value={body} components={components} />
               </div>
             )}
           </article>

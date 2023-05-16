@@ -44,17 +44,17 @@ const AboutPage = async () => {
         <h2 className="font-bold text-xl md:text-2xl mt-2">
           Front-end Engineer from PH 🇵🇭
         </h2>
-        <p className="my-8">
+        <p className="my-8 text-lg">
           I'm a passionate developer, currently focused on the frontend. I am
           naturally curious, always seeking new knowledge, and actively
           developing new skills.
         </p>
-        <p className="my-4">
+        <p className="my-4 text-lg">
           The technologies I work with are JavaScript, HTML and CSS with a focus
           on the frameworks React.js, Next.js, and TailwindCSS. I've also worked
           with backend technologies such as PHP, Laravel, and MySQL.
         </p>
-        <p className="my-4">
+        <p className="my-4 text-lg">
           When I'm not coding or taking a break, you'll often see me casually
           playing video games, and binge-watching movies, TV series, and anime.
         </p>

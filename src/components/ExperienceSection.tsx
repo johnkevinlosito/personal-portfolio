@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
+import components from "./PortableTextComponents";
 
 interface ExperienceProps {
   jobs: Job[];
@@ -66,8 +67,8 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
                 )}
               </div>
             </div>
-            <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3 prose dark:prose-invert">
-              <PortableText value={description} />
+            <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3">
+              <PortableText value={description} components={components} />
               <p>
                 <strong>Technologies: </strong>
                 {skills.join(", ")}
