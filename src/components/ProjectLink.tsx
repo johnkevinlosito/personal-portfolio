@@ -23,7 +23,7 @@ const ProjectLink = ({ link, type }: LinkProps) => {
     case "internal":
       return (
         <Link
-          href={link}
+          href={`/blog/${link}`}
           className="flex gap-1 items-center text-slate-600 bg-slate-200 text-sm py-1 px-2 rounded-md"
         >
           View Post

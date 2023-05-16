@@ -19,7 +19,7 @@ export const projectsQuery = (slug?: string) => groq`
     "logo": logo.asset->.url,
   },
   "post": post-> {
-    slug,
+    "slug": slug.current,
   },
   site,
   repo

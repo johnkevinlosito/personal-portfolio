@@ -57,7 +57,7 @@ const ProjectsPage = async () => {
                     <ProjectLink link={project.repo} type="repo" />
                   )}
                   {project.post && (
-                    <ProjectLink link={project.post} type="internal" />
+                    <ProjectLink link={project.post.slug} type="internal" />
                   )}
                 </div>
               </div>

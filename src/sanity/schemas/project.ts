@@ -55,6 +55,7 @@ export default defineType({
           to: [{ type: "skill" }],
         },
       ],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "client",
