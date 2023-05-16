@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const postsQuery = (slug?: string) => groq`
+export const postsQuery = (slug?: string, latest?: boolean) => groq`
 *[_type == "post"${
   slug ? ` && slug.current == "${slug}"` : ""
 }] | order(publishedAt desc) {
@@ -15,5 +15,5 @@ export const postsQuery = (slug?: string) => groq`
   "updatedAt": _updatedAt,
   "mainImage": mainImage.asset->url,
   body,
-}
+}${latest ? "[0...3]" : ""}
 `;
