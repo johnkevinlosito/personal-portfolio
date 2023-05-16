@@ -66,7 +66,7 @@ const components: Partial<PortableTextReactComponents> = {
 
   marks: {
     link: ({ children, value }) => {
-      const rel = value.href.startsWith("/")
+      const rel = !value.href.startsWith("/")
         ? "noreferrer noopener"
         : undefined;
 

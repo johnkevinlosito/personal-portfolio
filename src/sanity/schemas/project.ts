@@ -32,29 +32,7 @@ export default defineType({
       description:
         "Used both for the <meta> description tag for SEO, and project subheader.",
       title: "Overview",
-      type: "array",
-      of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [],
-            decorators: [
-              {
-                title: "Italic",
-                value: "em",
-              },
-              {
-                title: "Strong",
-                value: "strong",
-              },
-            ],
-          },
-          styles: [],
-          type: "block",
-        }),
-      ],
-      validation: (rule) => rule.max(155).required(),
+      type: "string",
     }),
     defineField({
       name: "coverImage",
@@ -81,7 +59,14 @@ export default defineType({
     defineField({
       name: "client",
       title: "Client",
-      type: "string",
+      type: "reference",
+      to: [{ type: "company" }],
+    }),
+    defineField({
+      name: "post",
+      title: "Post",
+      type: "reference",
+      to: [{ type: "post" }],
     }),
     defineField({
       name: "site",
@@ -94,40 +79,14 @@ export default defineType({
       type: "url",
     }),
     defineField({
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "string" }],
-      options: {
-        layout: "tags",
-      },
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
     }),
     defineField({
       name: "description",
       title: "Project Description",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "block",
-          marks: {
-            annotations: [
-              {
-                name: "link",
-                type: "object",
-                title: "Link",
-                fields: [
-                  {
-                    name: "href",
-                    type: "url",
-                    title: "Url",
-                  },
-                ],
-              },
-            ],
-          },
-          styles: [],
-        }),
-      ],
+      type: "blockContent",
     }),
   ],
 });

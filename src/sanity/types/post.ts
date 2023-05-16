@@ -10,7 +10,6 @@ export default interface Post {
   estimatedReadingTime: number;
   categories: Category[];
   body: BlockContent[];
-  seoDescription: string;
   publishedAt: string;
   updatedAt: string;
 }
