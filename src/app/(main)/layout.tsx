@@ -1,6 +1,12 @@
 import ClientLayout from "./client-layout";
 import "@styles/globals.css";
 
+export const metadata = {
+  icons: {
+    icon: "/favicon.jpg",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
