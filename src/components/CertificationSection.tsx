@@ -67,7 +67,7 @@ const CertificationSection = ({ certification }: CertificationProps) => {
               </div>
             </div>
             {body && (
-              <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3 prose dark:prose-invert">
+              <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3">
                 <PortableText value={body} components={components} />
               </div>
             )}

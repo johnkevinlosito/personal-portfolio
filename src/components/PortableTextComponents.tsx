@@ -15,7 +15,7 @@ export const urlFor = (source: SanityImageSource) => {
 const components: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
-      <div className="relative m-10 -mx-4 aspect-video w-[100vw] md:mx-auto md:w-full lg:max-w-4xl">
+      <div className="relative my-5 -mx-4 aspect-video w-[100vw] md:mx-auto md:w-full lg:max-w-4xl">
         <Image
           src={urlFor(value).url()}
           alt={value.alt}
@@ -33,7 +33,9 @@ const components: Partial<PortableTextReactComponents> = {
       <ul className="ml-6 list-disc space-y-2 py-4 text-lg">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="mt-lg list-decimal text-lg">{children}</ol>
+      <ol className="ml-6 mt-lg list-decimal space-y-2 py-4 text-lg">
+        {children}
+      </ol>
     ),
   },
 
