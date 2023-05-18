@@ -3,7 +3,7 @@ import Container from "./Container";
 import Aws from "@root/public/assets/AWS.svg";
 import Flutter from "@root/public/assets/Flutter.svg";
 import Git from "@root/public/assets/Git.svg";
-import Javascript from "@root/public/assets/Javascript.svg";
+import Javascript from "@root/public/assets/JavaScript.svg";
 import Nextjs from "@root/public/assets/Nextjs.svg";
 import ReactJs from "@root/public/assets/React.svg";
 import Tailwind from "@root/public/assets/TailwindCSS.svg";

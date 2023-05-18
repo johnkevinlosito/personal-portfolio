@@ -39,24 +39,25 @@ const AboutPage = async () => {
     <div>
       <Container>
         <h1 className="gradient-text font-bold text-3xl md:text-5xl lg:text-6xl mt-8">
-          Hey, I'm John Kevin 👋
+          Hey, I&apos;m John Kevin 👋
         </h1>
         <h2 className="font-bold text-xl md:text-2xl mt-2">
           Front-end Engineer from PH 🇵🇭
         </h2>
         <p className="my-8 text-lg">
-          I'm a passionate developer, currently focused on the frontend. I am
-          naturally curious, always seeking new knowledge, and actively
+          I&apos;m a passionate developer, currently focused on the frontend. I
+          am naturally curious, always seeking new knowledge, and actively
           developing new skills.
         </p>
         <p className="my-4 text-lg">
           The technologies I work with are JavaScript, HTML and CSS with a focus
-          on the frameworks React.js, Next.js, and TailwindCSS. I've also worked
-          with backend technologies such as PHP, Laravel, and MySQL.
+          on the frameworks React.js, Next.js, and TailwindCSS. I&apos;ve also
+          worked with backend technologies such as PHP, Laravel, and MySQL.
         </p>
         <p className="my-4 text-lg">
-          When I'm not coding or taking a break, you'll often see me casually
-          playing video games, and binge-watching movies, TV series, and anime.
+          When I&apos;m not coding or taking a break, you&apos;ll often see me
+          casually playing video games, and binge-watching movies, TV series,
+          and anime.
         </p>
         <div className="mt-12 space-y-6">
           <ExperienceSection jobs={jobs} />

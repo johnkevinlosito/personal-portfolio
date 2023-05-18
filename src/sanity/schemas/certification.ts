@@ -13,6 +13,11 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "url",
+      title: "URL",
+      type: "string",
+    }),
+    defineField({
       name: "fromDate",
       title: "Valid from date",
       type: "date",

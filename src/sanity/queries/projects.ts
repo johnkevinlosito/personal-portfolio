@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const projectsQuery = (slug?: string) => groq`
+export const projectsQuery = (slug?: string, latest?: boolean) => groq`
 *[_type == "project"${
   slug ? ` && slug.current == "${slug}"` : ""
 }] | order(publishedAt desc) {
@@ -23,5 +23,5 @@ export const projectsQuery = (slug?: string) => groq`
   },
   site,
   repo
-}
+}${latest ? "[0...3]" : ""}
 `;
