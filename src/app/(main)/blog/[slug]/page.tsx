@@ -26,7 +26,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const post = await getData(params.slug);
   return {
     title: `${post?.title} - John Kevin Losito's Blog`,
-    description: post?.description,
+    description: post?.description || post?.excerpt,
   };
 };
 
