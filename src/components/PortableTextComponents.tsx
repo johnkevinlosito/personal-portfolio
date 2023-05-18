@@ -60,7 +60,7 @@ const components: Partial<PortableTextReactComponents> = {
       <p className="py-2 text-lg leading-8">{children}</p>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="mx-4 my-4 rounded-md border-x-4 border-x-gray-500 bg-gray-300 px-4 py-2 font-serif text-lg italic dark:border-x-off-white dark:bg-gray-700">
+      <blockquote className="mx-4 my-4 rounded-md border-x-4 border-x-gray-500 bg-gray-300 px-4 py-2 font-serif text-lg italic dark:border-x-gray-100 dark:bg-gray-700">
         {children}
       </blockquote>
     ),
@@ -97,6 +97,11 @@ const components: Partial<PortableTextReactComponents> = {
     span: ({ children }) => <span>{children}</span>,
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
+    code: ({ children }) => (
+      <code className="bg-gray-200 dark:bg-gray-700 font-semibold text-sm p-1">
+        {children}
+      </code>
+    ),
   },
 };
 
