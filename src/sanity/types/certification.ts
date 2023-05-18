@@ -4,6 +4,7 @@ import Company from "./company";
 export default interface Certification {
   _id: string;
   certificate: string;
+  url: string;
   fromDate: string;
   toDate: string | null;
   issuer: Company;

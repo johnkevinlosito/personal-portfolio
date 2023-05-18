@@ -4,6 +4,7 @@ export const certificationQuery = groq`
 *[_type == "certification"] {
   _id,
   certificate,
+  url,
   body,
   fromDate,
   toDate,
