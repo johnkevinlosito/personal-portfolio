@@ -24,10 +24,8 @@ export const NavItem = ({ href, text }: NavItemProps) => {
     <Link
       href={href}
       className={classNames(
-        isActive
-          ? "font-bold gradient-text"
-          : "font-normal text-gray-500 dark:text-gray-400",
-        "hover:text-gray-900 dark:hover:text-gray-200 transition-all text-xl"
+        isActive ? "font-bold gradient-text" : "font-normal",
+        "relative underlined inline-block text-xl"
       )}
     >
       {text}

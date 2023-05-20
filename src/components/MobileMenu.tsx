@@ -14,7 +14,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
           <ul className="flex flex-col justify-center align-center text-center gap-4 h-full">
             <NavItem href="/about" text="About" />
             <NavItem href="/projects" text="Projects" />
-            <NavItem href="/posts" text="Posts" />
+            <NavItem href="/blog" text="Blog" />
             <li className="flex justify-center mt-12">
               <ThemeSwitch />
             </li>
