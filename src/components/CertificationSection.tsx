@@ -16,7 +16,7 @@ const CertificationSection = ({ certification }: CertificationProps) => {
         Certification
       </h2>
       {certification.map(
-        ({ _id, body, badge, certificate, fromDate, issuer, toDate }) => (
+        ({ _id, body, badge, certificate, fromDate, issuer, toDate, url }) => (
           <article
             key={_id}
             className="relative grid md:grid-cols-5 md:gap-10 before:content-[''] mx-12 before:block before:h-full before:absolute before:left-[-25px] md:before:left-[-37px] before:border-l-2 before:border-gray-300 dark:before:border-gray-700 md:space-x-4 pb-12 mt-8"
@@ -36,7 +36,20 @@ const CertificationSection = ({ certification }: CertificationProps) => {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <h3 className="p-0 m-0">{certificate}</h3>
+                <h3 className="p-0 m-0">
+                  {url ? (
+                    <a
+                      className="p-0 m-0"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {certificate}
+                    </a>
+                  ) : (
+                    certificate
+                  )}
+                </h3>
 
                 {issuer.url ? (
                   <a
