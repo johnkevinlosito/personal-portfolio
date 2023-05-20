@@ -39,7 +39,7 @@ const CertificationSection = ({ certification }: CertificationProps) => {
                 <h3 className="p-0 m-0">
                   {url ? (
                     <a
-                      className="p-0 m-0"
+                      className="p-0 m-0 relative underlined"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -53,7 +53,7 @@ const CertificationSection = ({ certification }: CertificationProps) => {
 
                 {issuer.url ? (
                   <a
-                    className="p-0 m-0"
+                    className="p-0 m-0 relative underlined"
                     href={issuer.url}
                     target="_blank"
                     rel="noopener noreferrer"

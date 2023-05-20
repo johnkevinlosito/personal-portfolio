@@ -39,7 +39,7 @@ const EducationSection = ({ education }: EducationProps) => {
 
               {school.url ? (
                 <a
-                  className="p-0 m-0"
+                  className="p-0 m-0 relative underlined"
                   href={school.url}
                   target="_blank"
                   rel="noopener noreferrer"

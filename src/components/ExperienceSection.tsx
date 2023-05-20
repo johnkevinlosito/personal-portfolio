@@ -40,7 +40,7 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
 
                 {company.url ? (
                   <a
-                    className="p-0 m-0"
+                    className="p-0 m-0 relative underlined"
                     href={company.url}
                     target="_blank"
                     rel="noopener noreferrer"

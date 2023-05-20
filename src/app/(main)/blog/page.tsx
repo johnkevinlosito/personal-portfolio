@@ -39,7 +39,7 @@ const BlogPage = async () => {
             </h2>
             <p>{post.excerpt}</p>
             <div className="mt-2 flex justify-between md:items-center gap-2 flex-col md:flex-row">
-              <span className="px-2 py-1 bg-slate-600 text-slate-200 font-light rounded hover:bg-slate-500 text-sm">
+              <span className="px-2 py-1 bg-slate-600 text-slate-200 font-light rounded hover:bg-slate-500 text-sm w-max">
                 {post.categories.join(", ")}
               </span>
               <em className="text-sm">
