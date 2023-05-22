@@ -76,7 +76,7 @@ const components: Partial<PortableTextReactComponents> = {
         return (
           <Link
             href={value.href}
-            className="underlined relative border-b-2 border-gray-300 font-bold hover:border-b-0 dark:border-gray-700"
+            className="underlined break-words relative border-b-2 border-gray-300 font-bold hover:border-b-0 dark:border-gray-700"
           >
             {children}
           </Link>
@@ -88,7 +88,7 @@ const components: Partial<PortableTextReactComponents> = {
           href={value.href}
           rel={rel}
           target="_blank"
-          className="underlined relative font-bold"
+          className="underlined break-words relative font-bold"
         >
           {children}
         </a>

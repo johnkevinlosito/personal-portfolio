@@ -62,12 +62,12 @@ const BlogPostPage = async ({ params }: PageProps) => {
     <Container>
       <article className="lg:w-2/3 mx-auto">
         {post.mainImage && (
-          <div className="relative h-96">
+          <div className="relative h-52 sm:h-72 md:h-96">
             <Image
               src={post.mainImage}
               alt={post.title}
               fill={true}
-              className="rounded-md object-cover"
+              className="rounded-md object-contain"
             />
           </div>
         )}
