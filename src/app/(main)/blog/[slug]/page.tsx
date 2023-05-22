@@ -27,6 +27,26 @@ export const generateMetadata = async ({ params }: PageProps) => {
   return {
     title: `${post?.title} - John Kevin Losito's Blog`,
     description: post?.description || post?.excerpt,
+    openGraph: {
+      title: `${post?.title} - John Kevin Losito's Blog`,
+      description: post?.description || post?.excerpt,
+      type: "article",
+      images: [
+        {
+          url: post?.mainImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post?.title} - John Kevin Losito's Blog`,
+      description: post?.description || post?.excerpt,
+      images: [
+        {
+          url: post?.mainImage,
+        },
+      ],
+    },
   };
 };
 

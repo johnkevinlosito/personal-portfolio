@@ -2,6 +2,7 @@ import ClientLayout from "./client-layout";
 import "@styles/globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://johnkevinlosito.com"),
   icons: {
     icon: "/favicon.jpg",
   },
