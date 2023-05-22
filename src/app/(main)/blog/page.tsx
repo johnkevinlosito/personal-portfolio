@@ -11,6 +11,27 @@ export const metadata = {
   title: "Blog by John Kevin Losito",
   description:
     "I try to make an effort to document my journey as a developer transitioning into cloud and devops in the form of blog posts. Here you find some of the articles I published over the years.",
+  openGraph: {
+    title: "Blog by John Kevin Losito",
+    description:
+      "I try to make an effort to document my journey as a developer transitioning into cloud and devops in the form of blog posts. Here you find some of the articles I published over the years.",
+    images: [
+      {
+        url: "/assets/blog-og.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog by John Kevin Losito",
+    description:
+      "I try to make an effort to document my journey as a developer transitioning into cloud and devops in the form of blog posts. Here you find some of the articles I published over the years.",
+    images: [
+      {
+        url: "/assets/blog-og.png",
+      },
+    ],
+  },
 };
 
 const getData = async () => {

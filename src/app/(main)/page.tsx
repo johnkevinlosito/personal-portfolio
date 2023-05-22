@@ -19,6 +19,25 @@ export const metadata = {
     "DevOps",
     "Cloud",
   ],
+  openGraph: {
+    title: "Front-end Engineer John Kevin Losito",
+    description: "A Front-End Engineer with a focus on JavaScript and React.",
+    images: [
+      {
+        url: "/assets/about-og.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Front-end Engineer John Kevin Losito",
+    description: "A Front-End Engineer with a focus on JavaScript and React.",
+    images: [
+      {
+        url: "/assets/about-og.png",
+      },
+    ],
+  },
 };
 
 const HomePage = () => {

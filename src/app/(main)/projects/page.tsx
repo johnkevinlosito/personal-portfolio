@@ -12,6 +12,25 @@ import ProjectLink from "@/components/ProjectLink";
 export const metadata = {
   title: "Projects of John Kevin Losito",
   description: "Here you find some of the projects I've worked on.",
+  openGraph: {
+    title: "Projects of John Kevin Losito",
+    description: "Here you find some of the projects I've worked on.",
+    images: [
+      {
+        url: "/assets/projects-og.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects of John Kevin Losito",
+    description: "Here you find some of the projects I've worked on.",
+    images: [
+      {
+        url: "/assets/projects-og.png",
+      },
+    ],
+  },
 };
 
 const getData = async () => {
