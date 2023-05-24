@@ -1,5 +1,9 @@
 import HeroSection from "@/components/HeroSection";
+import LatestPosts from "@/components/LatestPosts";
 import SkillsSection from "@/components/SkillsSection";
+import { sanityClient } from "@/lib/sanity";
+import { postsQuery } from "@/sanity/queries/posts";
+import Post from "@/sanity/types/post";
 import React from "react";
 
 export const metadata = {
@@ -40,11 +44,18 @@ export const metadata = {
   },
 };
 
-const HomePage = () => {
+const getData = async () => {
+  const posts: Post[] = await sanityClient.fetch(postsQuery(undefined, true));
+
+  return posts;
+};
+const HomePage = async () => {
+  const posts = await getData();
   return (
     <div>
       <HeroSection />
       <SkillsSection />
+      <LatestPosts posts={posts} />
     </div>
   );
 };
