@@ -8,11 +8,11 @@ const Footer = () => {
       <Container className="flex justify-between items-center flex-col md:flex-row">
         <span>&copy; {new Date().getFullYear()} John Kevin Losito</span>
         <Link
-          href="https://storyset.com/work"
+          href="https://storyset.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Work illustrations by Storyset
+          Illustrations by Storyset
         </Link>
       </Container>
     </footer>

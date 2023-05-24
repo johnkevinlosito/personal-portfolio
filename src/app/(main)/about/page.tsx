@@ -16,6 +16,29 @@ export const metadata = {
     "About John Kevin Losito, a Front-end Engineer, and a lifelong learner based in PH",
   description:
     "A passionate developer, naturally curious, and always seeking new knowledge",
+  openGraph: {
+    title:
+      "About John Kevin Losito, a Front-end Engineer, and a lifelong learner based in PH",
+    description:
+      "A passionate developer, naturally curious, and always seeking new knowledge",
+    images: [
+      {
+        url: "/assets/about-og.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "About John Kevin Losito, a Front-end Engineer, and a lifelong learner based in PH",
+    description:
+      "A passionate developer, naturally curious, and always seeking new knowledge",
+    images: [
+      {
+        url: "/assets/about-og.png",
+      },
+    ],
+  },
 };
 
 const getData = async () => {
