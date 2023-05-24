@@ -15,14 +15,11 @@ export const urlFor = (source: SanityImageSource) => {
 const components: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
-      <div className="relative my-5 -mx-4 aspect-video w-[100vw] md:mx-auto md:w-full lg:max-w-4xl">
-        <Image
-          src={urlFor(value).url()}
-          alt={value.alt}
-          className="object-contain"
-          fill
-        />
-      </div>
+      <img
+        src={urlFor(value).url()}
+        alt={value.alt}
+        className="block max-w-full mx-auto"
+      />
     ),
     code: ({ value }) => {
       return <CodeBlock code={value.code} language={value.language} />;
