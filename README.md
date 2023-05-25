@@ -1,8 +1,20 @@
+# John Kevin Losito Personal Portfolio
+
+This is my latest portfolio built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Tailwind](https://tailwindcss.com/). The content is managed through [Sanity](https://sanity.io/).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Next, copy `.env.example` and name it `.env.local`, and update supply the needed info.
+
+Then, run the development server:
 
 ```bash
 npm run dev
