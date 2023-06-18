@@ -42,16 +42,16 @@ const components: Partial<PortableTextReactComponents> = {
 
   block: {
     h1: ({ children }) => (
-      <h1 className="py-4 text-5xl font-bold">{children}</h1>
+      <h1 className="pt-4 text-5xl font-bold">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="py-4 text-4xl font-bold">{children}</h2>
+      <h2 className="pt-4 text-4xl font-bold">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="py-4 text-3xl font-bold">{children}</h3>
+      <h3 className="pt-4 text-3xl font-bold">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h4 className="py-4 text-2xl font-bold">{children}</h4>
+      <h4 className="pt-4 text-2xl font-bold">{children}</h4>
     ),
     normal: ({ children }) => (
       <p className="py-2 text-lg leading-8">{children}</p>
