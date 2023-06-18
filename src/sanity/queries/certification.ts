@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 export const certificationQuery = groq`
-*[_type == "certification"] {
+*[_type == "certification"] | order(fromDate desc) {
   _id,
   certificate,
   url,
