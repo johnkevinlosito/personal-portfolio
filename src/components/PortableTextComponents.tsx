@@ -53,6 +53,12 @@ const components: Partial<PortableTextReactComponents> = {
     h4: ({ children }) => (
       <h4 className="pt-4 text-2xl font-bold">{children}</h4>
     ),
+    h5: ({ children }) => (
+      <h5 className="pt-4 text-xl font-bold">{children}</h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="pt-4 text-lg font-bold">{children}</h6>
+    ),
     normal: ({ children }) => (
       <p className="py-2 text-lg leading-8">{children}</p>
     ),
