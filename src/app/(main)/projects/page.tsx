@@ -80,7 +80,7 @@ const ProjectsPage = async () => {
                   )}
                 </div>
               </div>
-              <div className="w-full md:max-w-lg">
+              <div className="w-full md:max-w-lg overflow-hidden">
                 <div className="relative inline-block w-full h-64 md:h-full min-h-[296px]">
                   <Image
                     src={project.coverImage}

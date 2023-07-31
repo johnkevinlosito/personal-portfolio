@@ -11,6 +11,9 @@ import CSS3 from "@root/public/assets/CSS3.svg";
 import HTML5 from "@root/public/assets/HTML5.svg";
 import Docker from "@root/public/assets/Docker.svg";
 import GitLab from "@root/public/assets/GitLab.svg";
+import GitHub from "@root/public/assets/GitHub.svg";
+import Nodejs from "@root/public/assets/Nodejs.svg";
+import Python from "@root/public/assets/Python.svg";
 
 const SkillsSection = () => {
   return (
@@ -30,7 +33,26 @@ const SkillsSection = () => {
           <Aws className="text-[4.5rem] text-[#252F3E] dark:text-white" />
           <Git className="text-[4rem]" />
           <Docker className="text-[5.5rem]" />
+          <GitHub className="text-[4rem] text-[#181616] dark:text-white" />
           <GitLab className="text-[4rem]" />
+          <Nodejs className="text-[4rem]" />
+          <Python className="text-[4rem]" />
+        </div>
+        <div className="sr-only">
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>Javascript</p>
+          <p>ReactJs</p>
+          <p>Nextjs</p>
+          <p>Flutter</p>
+          <p>Tailwind</p>
+          <p>Aws</p>
+          <p>Git</p>
+          <p>Docker</p>
+          <p>GitHub</p>
+          <p>GitLab</p>
+          <p>Nodejs</p>
+          <p>Python</p>
         </div>
       </Container>
     </section>
