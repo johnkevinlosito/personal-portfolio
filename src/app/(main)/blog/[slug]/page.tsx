@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
-import components from "@/components/PortableTextComponents";
+import { PostBody } from "@/components/PostBody";
+import markdownToHtml from "@/lib/markdownToHtml";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { sanityClient } from "@/lib/sanity";
-import { postsQuery } from "@/sanity/queries/posts";
 import Post from "@/sanity/types/post";
-import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import { groq } from "next-sanity";
 import Image from "next/image";
@@ -16,14 +16,11 @@ interface PageProps {
   };
 }
 
-const getData = async (slug: string) => {
-  const post: [Post] = await sanityClient.fetch(postsQuery(slug));
-
-  return post[0];
-};
-
 export const generateMetadata = async ({ params }: PageProps) => {
-  const post = await getData(params.slug);
+  const post = getPostBySlug(params.slug);
+  if (!post) {
+    return notFound();
+  }
   return {
     title: `${post?.title} - John Kevin Losito's Blog`,
     description: post?.description || post?.excerpt,
@@ -33,7 +30,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
       type: "article",
       images: [
         {
-          url: post?.mainImage,
+          url: post?.coverImage,
         },
       ],
     },
@@ -43,7 +40,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
       description: post?.description || post?.excerpt,
       images: [
         {
-          url: post?.mainImage,
+          url: post?.coverImage,
         },
       ],
     },
@@ -52,19 +49,21 @@ export const generateMetadata = async ({ params }: PageProps) => {
 
 const BlogPostPage = async ({ params }: PageProps) => {
   const { slug } = params;
+  const post = getPostBySlug(slug);
 
-  const post = await getData(slug);
   if (!post) {
     notFound();
   }
 
+  const content = await markdownToHtml(post.content || "");
+
   return (
     <Container>
       <article className="lg:w-2/3 mx-auto">
-        {post.mainImage && (
+        {post.coverImage && (
           <div className="relative h-52 sm:h-72 md:h-96">
             <Image
-              src={post.mainImage}
+              src={post.coverImage}
               alt={post.title}
               fill={true}
               className="rounded-md object-contain"
@@ -78,7 +77,7 @@ const BlogPostPage = async ({ params }: PageProps) => {
           <h1 className="gradient-text text-3xl font-bold md:text-4xl lg:text-5xl pb-8 ">
             {post.title}
           </h1>
-          <PortableText value={post.body} components={components} />
+          <PostBody content={content} />
         </div>
       </article>
     </Container>
@@ -86,15 +85,11 @@ const BlogPostPage = async ({ params }: PageProps) => {
 };
 
 export const generateStaticParams = async () => {
-  const query = groq`
-		*[_type == 'post'] {
-			"slug": slug.current
-		}
-	`;
+  const posts = getAllPosts();
 
-  const slugs: Pick<Post, "slug">[] = await sanityClient.fetch(query);
-
-  return slugs.map(({ slug }) => ({ slug }));
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 };
 
 export default BlogPostPage;

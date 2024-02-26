@@ -1,9 +1,6 @@
 import Container from "@/components/Container";
-import { sanityClient } from "@/lib/sanity";
-import { postsQuery } from "@/sanity/queries/posts";
-import Post from "@/sanity/types/post";
+import { getAllPosts } from "@/lib/posts";
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -34,14 +31,9 @@ export const metadata = {
   },
 };
 
-const getData = async () => {
-  const posts: Post[] = await sanityClient.fetch(postsQuery());
+const BlogPage = () => {
+  const posts = getAllPosts();
 
-  return posts;
-};
-
-const BlogPage = async () => {
-  const posts = await getData();
   return (
     <Container>
       <h1 className="gradient-text font-bold text-3xl md:text-5xl lg:text-6xl pb-8 mt-8">
@@ -61,7 +53,7 @@ const BlogPage = async () => {
             <p>{post.excerpt}</p>
             <div className="mt-2 flex justify-between md:items-center gap-2 flex-col md:flex-row">
               <span className="px-2 py-1 bg-slate-600 text-slate-200 font-light rounded hover:bg-slate-500 text-sm w-max">
-                {post.categories.join(", ")}
+                {post.categories?.join(", ")}
               </span>
               <em className="text-sm">
                 Published on{" "}
