@@ -26,3 +26,13 @@ export function getAllPosts(): Post[] {
     .sort((post1, post2) => (post1.publishedAt > post2.publishedAt ? -1 : 1));
   return posts;
 }
+
+export function getLatestPosts(): Post[] {
+  const slugs = getPostSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.publishedAt > post2.publishedAt ? -1 : 1))
+    .slice(0, 3);
+  return posts;
+}

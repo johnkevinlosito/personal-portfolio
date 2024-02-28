@@ -1,7 +1,7 @@
 ---
 title: "Automate Docker build and push using GitLab CI"
 publishedAt: "2021-02-09"
-description: "Compilation of most used Docker commands"
+description: "So you’ve got your dockerized project ready to push to Docker Hub? Let’s automate this process using GitLab CI."
 excerpt: "So you’ve got your dockerized project ready to push to Docker Hub? Let’s automate this process using GitLab CI. First, sign up or sign in at https://hub.docker.com/ then create an Access Token by going to Settings then Security > New Access Token. ..."
 categories: ["CICD", "Docker", "Devops"]
 coverImage: "/assets/posts/docker-gitlab-ci.png"
