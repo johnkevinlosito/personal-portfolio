@@ -1,9 +1,8 @@
-import Education from "@/sanity/types/education";
-import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
-import components from "./PortableTextComponents";
+import { Education } from "@/interfaces/education";
+import { PostBody } from "./PostBody";
 
 interface EducationProps {
   education: Education[];
@@ -15,9 +14,9 @@ const EducationSection = ({ education }: EducationProps) => {
       <h2 className="gradient-text font-bold text-2xl md:text-3xl lg:text-4xl mt-14">
         Education
       </h2>
-      {education.map(({ _id, body, course, date, school }) => (
+      {education.map(({ description, course, dateGraduated, school }) => (
         <article
-          key={_id}
+          key={`${course}-${school.name}`}
           className="relative grid md:grid-cols-5 md:gap-10 before:content-[''] mx-12 before:block before:h-full before:absolute before:left-[-25px] md:before:left-[-37px] before:border-l-2 before:border-gray-300 dark:before:border-gray-700 md:space-x-4 pb-12 mt-8"
         >
           <div className="relative pb-12 md:col-span-2">
@@ -50,7 +49,7 @@ const EducationSection = ({ education }: EducationProps) => {
                 <p className="p-0 m-0">{school.name}</p>
               )}
               <p className="p-0 m-0 text-sm text-gray-500">
-                {format(new Date(date), "MMM yyyy")}
+                {format(new Date(dateGraduated), "MMM yyyy")}
               </p>
               {school.logo && (
                 <Image
@@ -63,9 +62,9 @@ const EducationSection = ({ education }: EducationProps) => {
               )}
             </div>
           </div>
-          {body && (
+          {description && (
             <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3">
-              <PortableText value={body} components={components} />
+              <PostBody content={description} />
             </div>
           )}
         </article>
