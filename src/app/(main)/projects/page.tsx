@@ -1,13 +1,10 @@
 import Container from "@/components/Container";
-import components from "@/components/PortableTextComponents";
-import { sanityClient } from "@/lib/sanity";
-import { projectsQuery } from "@/sanity/queries/projects";
-import Project from "@/sanity/types/project";
-import { PortableText } from "@portabletext/react";
 import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import ProjectLink from "@/components/ProjectLink";
+import { projects } from "@root/content/data/projects";
+import { PostBody } from "@/components/PostBody";
 
 export const metadata = {
   title: "Projects of John Kevin Losito",
@@ -33,14 +30,7 @@ export const metadata = {
   },
 };
 
-const getData = async () => {
-  const projects: Project[] = await sanityClient.fetch(projectsQuery());
-
-  return projects;
-};
-
-const ProjectsPage = async () => {
-  const projects = await getData();
+const ProjectsPage = () => {
   return (
     <Container>
       <h1 className="gradient-text font-bold text-3xl md:text-5xl lg:text-6xl pb-8 mt-8">
@@ -49,7 +39,7 @@ const ProjectsPage = async () => {
       {projects.map((project, index) => {
         const isEven = index % 2 === 0;
         return (
-          <article key={project.slug} className="mb-16">
+          <article key={project.title} className="mb-16">
             <div
               className={classNames("flex flex-col gap-4", {
                 "md:flex-row": isEven,
@@ -60,10 +50,7 @@ const ProjectsPage = async () => {
                 <h2 className="text-xl font-bold md:text-2xl lg:text-3xl mb-2">
                   {project.title}
                 </h2>
-                <PortableText
-                  value={project.description}
-                  components={components}
-                />
+                <PostBody content={project.description} />
                 <p className="max-w-xs">
                   <strong>Tech used: </strong>
                   {project.skills.join(", ")}
@@ -76,7 +63,7 @@ const ProjectsPage = async () => {
                     <ProjectLink link={project.repo} type="repo" />
                   )}
                   {project.post && (
-                    <ProjectLink link={project.post.slug} type="internal" />
+                    <ProjectLink link={project.post} type="internal" />
                   )}
                 </div>
               </div>

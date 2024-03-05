@@ -43,4 +43,7 @@
   .underlined {
     @apply underlined-bg;
   }
+  .prose a {
+    @apply underlined break-words relative font-bold no-underline;
+  }
 }
