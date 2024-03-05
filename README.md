@@ -1,6 +1,6 @@
 # John Kevin Losito Personal Portfolio
 
-This is my latest portfolio built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Tailwind](https://tailwindcss.com/). The content is managed through [Sanity](https://sanity.io/).
+This is my latest portfolio built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/) and [Tailwind](https://tailwindcss.com/). The content is managed through Markdown files.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
