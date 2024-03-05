@@ -2,13 +2,9 @@ import CertificationSection from "@/components/CertificationSection";
 import Container from "@/components/Container";
 import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import { sanityClient } from "@/lib/sanity";
-import { certificationQuery } from "@/sanity/queries/certification";
-import { educationQuery } from "@/sanity/queries/education";
-import { jobsQuery } from "@/sanity/queries/jobs";
-import Certification from "@/sanity/types/certification";
-import Education from "@/sanity/types/education";
-import Job from "@/sanity/types/job";
+import { certifications } from "@root/content/data/certifications";
+import { education } from "@root/content/data/education";
+import { jobs } from "@root/content/data/jobs";
 import React from "react";
 
 export const metadata = {
@@ -41,23 +37,7 @@ export const metadata = {
   },
 };
 
-const getData = async () => {
-  const jobs: Job[] = await sanityClient.fetch(jobsQuery);
-  const education: Education[] = await sanityClient.fetch(educationQuery);
-  const certification: Certification[] = await sanityClient.fetch(
-    certificationQuery
-  );
-
-  return {
-    jobs,
-    education,
-    certification,
-  };
-};
-
-const AboutPage = async () => {
-  const { jobs, education, certification } = await getData();
-
+const AboutPage = () => {
   return (
     <div>
       <Container>
@@ -89,7 +69,7 @@ const AboutPage = async () => {
           <EducationSection education={education} />
         </div>
         <div className="mt-12 space-y-6">
-          <CertificationSection certification={certification} />
+          <CertificationSection certification={certifications} />
         </div>
       </Container>
     </div>

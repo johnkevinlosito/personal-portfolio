@@ -1,9 +1,8 @@
-import Job from "@/sanity/types/job";
-import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
-import components from "./PortableTextComponents";
+import { Job } from "@/interfaces/job";
+import { PostBody } from "./PostBody";
 
 interface ExperienceProps {
   jobs: Job[];
@@ -16,9 +15,9 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
         Work Experience
       </h2>
       {jobs.map(
-        ({ _id, company, jobTitle, fromDate, toDate, skills, description }) => (
+        ({ company, jobTitle, fromDate, toDate, skills, description }) => (
           <article
-            key={_id}
+            key={`${jobTitle}-${company.name}`}
             className="relative grid md:grid-cols-5 md:gap-10 before:content-[''] mx-12 before:block before:h-full before:absolute before:left-[-25px] md:before:left-[-37px] before:border-l-2 before:border-gray-300 dark:before:border-gray-700 md:space-x-4 pb-12 mt-8"
           >
             <div className="relative pb-12 md:col-span-2">
@@ -68,7 +67,7 @@ const ExperienceSection = ({ jobs }: ExperienceProps) => {
               </div>
             </div>
             <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3">
-              <PortableText value={description} components={components} />
+              <PostBody content={description} />
               <p>
                 <strong>Technologies: </strong>
                 {skills.join(", ")}

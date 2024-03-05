@@ -1,9 +1,8 @@
-import Certification from "@/sanity/types/certification";
-import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import React from "react";
-import components from "./PortableTextComponents";
+import { Certification } from "@/interfaces/certification";
+import { PostBody } from "./PostBody";
 
 interface CertificationProps {
   certification: Certification[];
@@ -16,9 +15,17 @@ const CertificationSection = ({ certification }: CertificationProps) => {
         Certification
       </h2>
       {certification.map(
-        ({ _id, body, badge, certificate, fromDate, issuer, toDate, url }) => (
+        ({
+          description,
+          badge,
+          certificate,
+          fromDate,
+          issuer,
+          toDate,
+          url,
+        }) => (
           <article
-            key={_id}
+            key={`${certificate}`}
             className="relative grid md:grid-cols-5 md:gap-10 before:content-[''] mx-12 before:block before:h-full before:absolute before:left-[-25px] md:before:left-[-37px] before:border-l-2 before:border-gray-300 dark:before:border-gray-700 md:space-x-4 pb-12 mt-8"
           >
             <div className="relative pb-12 md:col-span-2">
@@ -79,9 +86,9 @@ const CertificationSection = ({ certification }: CertificationProps) => {
                 )}
               </div>
             </div>
-            {body && (
+            {description && (
               <div className="relative pb-4 md:border-b md:border-gray-300 md:dark:border-gray-400 md:col-span-3">
-                <PortableText value={body} components={components} />
+                <PostBody content={description} />
               </div>
             )}
           </article>
